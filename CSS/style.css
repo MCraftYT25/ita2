@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/*————————————————————————————————————————|Fonts|————————————————————*/
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../files/fonts/Ubuntu-Regular.ttf');
+}
+@font-face {
+    font-family: 'Apple';
+    src: url('../files/fonts/SFUIText-Regular.otf');
+}
+@font-face {
+    font-family: 'Apple-bold';
+    src: url('../files/fonts/SFUIText-Bold.otf');
+}
+@font-face {
+    font-family: 'Apple-heavy';
+    src: url('../files/fonts/SFUIText-Heavy.otf');
+}
+@font-face {
+    font-family: 'Apple-semi-bold';
+    src: url('../files/fonts/SFUIText-Semibold.otf');
+}
+@font-face {
+    font-family: 'Apple-light';
+    src: url('../files/fonts/SFUIText-Light.otf');
+}
+/*————————————————————————————————————————|Header|————————————————————*/
+header {
+    text-align: center;
+    background-color: #333;
+    color: rgb(253,217,141);
+    font-family: 'apple-semi-bold';
+}
+body {
+    font-family: 'apple';
+}
+h1 {
+    padding: 0.5em;
+}
+#page-content {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+#game-searched-word {
+    text-align: center;
+    width: 400px;
+    padding: 0.5em;
+}
+.true {
+    color: green;
+}
+.false {
+    color: red;
+}
+#user-word {
+    padding: 0.5em;
+    border: none;
+    border-bottom: solid 1px black;
+    font-size: 1.5em;
+}
+#user-word:focus {
+    outline: none;
+}
+#recommendation {
+    background-color: #333;
+    color: rgb(253,217,141);
+    padding: 0.5em;
+    border-radius: 0.2em;
+    font-family: 'apple-semi-bold';
+}
+#searched-word {
+    padding: 0.5em;
+    font-family: 'apple-semi-bold';
+}
+#wynik {
+    padding: 0.5em;
+}
+
+#dictionary {
+    padding: 0.5em;
+}
+.word-cont {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.2em;
+    margin-top: 0.2em;
+}
+.word {
+    font-family: 'apple';
+}
+.translate {
+    color: gray;
+}
+.pause {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.myText {
+    background-color: #333;
+    color: rgb(253,217,141);
+    padding: 0.5em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    border-radius: 0.2em;
+    user-select: none;
+}
+
+#searchelement {
+    padding: 0.5em;
+    border: none;
+    border-bottom: solid 1px black;
+}
+#searchelement:focus {
+    outline: none;
+}
+
+
+#kategorie {
+    padding: 0.5em;
+}
+#kategorie span {
+    background-color: #333;
+    padding: 0.5em;
+    color: rgb(253,217,141);
+    border-radius: 0.2em;
+    font-family: 'apple-semi-bold';
+}

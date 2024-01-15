@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Tłumaczenie</h1>
+    </header>
+    <div id="page-content">
+        <div id="kategorie">
+            <span onclick="setDictionary('dictionary1');">Kolory</span>
+            <span onclick="setDictionary('dictionary2');">Zwierzęta</span>
+            <span onclick="setDictionary('dictionary3');">Jedzenie</span>
+            <span onclick="setDictionary('dictionary3');">Kategoria</span>
+            <span>Kategoria</span>
+            <span>Kategoria</span>
+            <span>Kategoria</span>
+        </div>
+        <div id="game-searched-word">
+            <p id="recommendation">Napisz tłumaczenie: </p>
+            <p id="searched-word"></p>
+            <input type="text" id="user-word" placeholder="">
+            <p id="wynik"></p>
+            <p id="character-map"><span class="myText">à</span><span class="myText">è</span><span class="myText">ì</span><span class="myText">ò</span><span class="myText">ù</span><span class="myText">’</span><span class="myText">?</span></p>
+        </div>
+        <div id="dictionary">
+            <h2>Słownik</h2>
+            <input type="text" id="searchelement" placeholder="Search...">
+            <div class="word-cont">
+                <p class="word">grande</p>
+                <p class="pause">—</p>
+                <p class="translate">duży</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+var dictionary1 = {
+    "grande": "duży",
+    "stesso": "ten sam",
+    "bello": "piękny",
+    "nuovo": "nowy",
+    "certo": "pewny",
+    "vero": "prawdziwy",
+    "buono": "dobry",
+    "italiano": "włoski",
+    "vecchio": "stary",
+    "ora": "teraz",
+    "qui": "tutaj",
+    "là": "tam",
+    "sempre": "zawsze"
+    // Dodaj więcej słów do słownika
+};
+
+var dictionary2 = {
+    "grande": "duży2",
+    "stesso": "ten sam2",
+    "bello": "piękny2",
+    "nuovo": "nowy2",
+    "certo": "pewny2",
+    "vero": "prawdziwy2",
+    "buono": "dobry2",
+    "italiano": "włoski2",
+    "vecchio": "stary",
+    "ora": "teraz",
+    "qui": "tutaj",
+    "là": "tam",
+    "sempre": "zawsze"
+    // Dodaj więcej słów do słownika
+};
+
+// Możesz dodać więcej słowników
+
+// Funkcja do ustawiania ciasteczka
+function setCookie(name, value, expiryHours) {
+    var date = new Date();
+    date.setTime(date.getTime() + (expiryHours*60*60*1000));
+    var expires = "expires="+ date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    console.log("Ustawiono na: " + expires);
+}
+
+// Funkcja do pobierania ciasteczka
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+// Funkcja do wyboru słownika
+function setDictionary(dictionaryName) {
+    // Zapisanie nazwy wybranego słownika w ciasteczku na 1 godzinę
+    setCookie('selectedDictionary', dictionaryName, 2);
+    console.log("Ustawiono: " + dictionaryName);
+}
+
+// Wywołanie funkcji setDictionary z wybranym słownikiem
+//setDictionary('dictionary1');
+console.log(getCookie('selectedDictionary'));
+
+// Tworzenie zmiennej dictionary i przypisanie do niej słownika pobranego z ciasteczka
+var selectedDictionaryName = getCookie('selectedDictionary');
+var dictionary;
+
+if (selectedDictionaryName) {
+    dictionary = window[selectedDictionaryName];
+}  else {
+    console.log("Nie znaleziono słownika w pliku cookie");
+    dictionary = {
+    "grande": "duży",
+    "stesso": "ten sam",
+    "bello": "piękny",
+    "nuovo": "nowy",
+    "certo": "pewny",
+    "vero": "prawdziwy",
+    "buono": "dobry",
+    "italiano": "włoski",
+    "vecchio": "stary",
+    "ora": "teraz",
+    "qui": "tutaj",
+    "là": "tam",
+    "sempre": "zawsze",
+    "mai": "nigdy",
+    "molto": "bardzo",
+    "troppo": "zbyt",
+    "bene": "dobrze",
+    "male": "źle",
+    "velocemente": "szybko",
+    "lentamente": "powoli",
+    "spesso": "często",
+    "a volte": "czasami",
+    "d’ora in poi": "od teraz",
+    "amore": "miłość",
+    "tempo": "czas",
+    "uomo": "mężczyzna",
+    "anno": "rok",
+    "giorno": "dzień",
+    "mano": "ręka",
+    "occhio": "oko",
+    "cosa": "rzecz",
+    "parte": "część",
+    "vita": "życie",
+    "ora": "godzina",
+    "madre": "matka",
+    "padre": "ojciec",
+    "figlio": "syn",
+    "mondo": "świat",
+    "casa": "dom",
+    "posto": "miejsce",
+    "lavoro": "praca",
+    "settimana": "tydzień",
+    "momento": "moment",
+    "donna": "kobieta",
+    "paese": "kraj",
+    "amico": "przyjaciel",
+    "piede": "stopa",
+    "corpo": "ciało",
+    "bambino": "dziecko",
+    "problema": "problem"
+    // Dodaj więcej słów do słownika
+};
+}
+
+// Przykładowy słownik
+
+
+// Zmienna do przechowywania wyniku
+var score = 0;
+
+// Zmienna do przechowywania liczby prób
+var attempts = 0;
+
+var selectedWords = [];
+
+// Funkcja do losowania 10 niepowtarzających się słów
+function selectWords() {
+    var keys = Object.keys(dictionary);
+    while (selectedWords.length < 10) {
+        var randomIndex = Math.floor(Math.random() * keys.length);
+        var word = keys[randomIndex];
+        if (!selectedWords.includes(word)) {
+            selectedWords.push(word);
+        }
+    }
+}
+
+// Funkcja do wyświetlania słowa do przetłumaczenia
+function displayWord() {
+    var resultField = document.getElementById("wynik");
+
+    if (attempts < 10) {
+        var word = dictionary[selectedWords[attempts]];
+        document.getElementById("searched-word").innerText = word;
+    } else {
+        document.getElementById("wynik").innerText = "Twój wynik to: " + score + "/10";
+        document.getElementById("user-word").style.display = "none"; // Dodane
+
+        // Usuwanie poprzednich klas
+        resultField.classList.remove("true");
+        resultField.classList.remove("false");
+
+        // Dodawanie klasy w zależności od wyniku
+        if (score < 5) {
+            resultField.classList.add("false");
+        } else if (score > 5) {
+            resultField.classList.add("true");
+        }
+    }
+}
+
+// Funkcja do sprawdzania poprawności tłumaczenia
+function checkTranslation() {
+    var searchedWord = document.getElementById("searched-word").innerText;
+    var userWord = document.getElementById("user-word").value;
+    var resultField = document.getElementById("wynik");
+
+    // Usuwanie poprzednich klas
+    resultField.classList.remove("true");
+    resultField.classList.remove("false");
+
+    if (Object.keys(dictionary).find(key => dictionary[key] === searchedWord).toLowerCase() === userWord.toLowerCase()) {
+        score++;
+        resultField.innerText = "Poprawne tłumaczenie!";
+        resultField.classList.add("true");
+    } else {
+        resultField.innerText = "Niepoprawne tłumaczenie. Poprawne tłumaczenie to: " + Object.keys(dictionary).find(key => dictionary[key] === searchedWord);
+        resultField.classList.add("false");
+    }
+
+    attempts++;
+    // Przejście do kolejnego słowa
+    displayWord();
+}
+
+// Wywołanie funkcji displayWord po załadowaniu strony
+window.onload = function() {
+    selectWords();
+    displayWord();
+};
+// Dodanie nasłuchiwania na zdarzenie 'keydown' dla pola "user-word"
+document.getElementById("user-word").addEventListener('keydown', function(event) {
+    if (event.key === "Enter") {
+        checkTranslation();
+        // Czyszczenie pola "user-word"
+        document.getElementById("user-word").value = "";
+    }
+});
+</script>
+<script>
+  // Funkcja do wypisywania par klucz-wartość ze słownika do elementu o danym id
+function printDictionaryToElement(dictionary, elementId) {
+    // Pobranie elementu o danym id
+    let element = document.getElementById(elementId);
+
+    // Sprawdzenie czy element istnieje
+    if (element) {
+        // Wypisanie każdej pary klucz-wartość ze słownika do elementu
+        for (let key in dictionary) {
+            if (dictionary.hasOwnProperty(key)) {
+                let wordCont = document.createElement("div");
+                wordCont.className = "word-cont";
+
+                let word = document.createElement("p");
+                word.className = "word";
+                word.textContent = key;
+
+                let pause = document.createElement("p");
+                pause.className = "pause";
+                pause.textContent = "—";
+
+                let translate = document.createElement("p");
+                translate.className = "translate";
+                translate.textContent = dictionary[key];
+
+                wordCont.appendChild(word);
+                wordCont.appendChild(pause);
+                wordCont.appendChild(translate);
+
+                element.appendChild(wordCont);
+            }
+        }
+    } else {
+        console.log("Element o id " + elementId + " nie istnieje.");
+    }
+}
+
+// Wywołanie funkcji
+printDictionaryToElement(dictionary, "dictionary");  
+</script>
+<script>
+// Pobranie elementów
+let myTexts = document.getElementsByClassName("myText");
+
+// Dodanie nasłuchiwania na kliknięcie do każdego elementu
+for (let i = 0; i < myTexts.length; i++) {
+    let myText = myTexts[i];
+
+    myText.addEventListener("click", function() {
+        // Utworzenie obiektu Range i dodanie do niego naszego elementu
+        let range = document.createRange();
+        range.selectNode(myText);
+
+        // Usunięcie wszystkich zaznaczeń
+        window.getSelection().removeAllRanges();
+
+        // Dodanie naszego Range do zaznaczenia
+        window.getSelection().addRange(range);
+
+        try {
+            // Próba skopiowania tekstu zaznaczenia do schowka
+            document.execCommand('copy');
+        } catch(err) {
+            console.log('Nie udało się skopiować tekstu');
+        }
+
+        // Usunięcie zaznaczenia po skopiowaniu tekstu
+        window.getSelection().removeAllRanges();
+
+        // Dopisanie tekstu do istniejącego tekstu w polu input o id "user-word"
+        let userInput = document.getElementById("user-word");
+        if (userInput) {
+            userInput.value += myText.textContent;
+        } else {
+            console.log('Pole input o id "user-word" nie istnieje.');
+        }
+    });
+}
+</script>
+<script>
+    document.querySelector('#searchelement').addEventListener('input', function(e) {
+    let searchValue = e.target.value.toLowerCase();
+    let verbContainers = document.querySelectorAll('.word-cont');
+
+    verbContainers.forEach(function(container) {
+        let textValue = container.textContent || container.innerText;
+        if (textValue.toLowerCase().indexOf(searchValue) > -1) {
+            container.style.display = "";
+        } else {
+            container.style.display = "none";
+        }
+    });
+});
+</script>
+<script>
+
+</script>
