@@ -40,11 +40,12 @@ body {
 h1 {
     padding: 0.5em;
 }
+/*
 #page-content {
     margin-left: 5%;
     margin-right: 5%;
 }
-
+*/
 
 #game-searched-word {
     text-align: center;
@@ -145,6 +146,7 @@ h1 {
     color: rgb(253,217,141);
     border-radius: 0.2em;
     background-color: #333;
+    width: 2.5em;
 }
 
 #game-form {
@@ -154,4 +156,41 @@ h1 {
 }
 #game-form #user-word {
     width: 90%;
+}
+
+@media screen and (min-width: 400px) {
+    #page-content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #game-searched-word {
+        width: 90%;
+    }
+    #dictionary {
+        padding: 1em;
+    }
+    #searchelement {
+        font-size: 1.5em;
+    }
+    #submit {
+        width: 4em;
+    }
+}
+@media screen and (min-width: 1200px) {
+    #page-content {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    #game-searched-word {
+        width: 350px;
+    }
+    #dictionary {
+        padding: 0.5em;
+    }
+    #searchelement {
+        font-size: 0.8em;
+    }
+    #submit {
+        width: 2.5em;
+    }
 }
