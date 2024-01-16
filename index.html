@@ -8,22 +8,25 @@
 </head>
 <body>
     <header>
-        <h1>Tłumaczenie</h1>
+        <h1>VSKY.GG</h1>
     </header>
     <div id="page-content">
         <div id="kategorie">
-            <span onclick="setDictionary('dictionary1');">Kolory</span>
-            <span onclick="setDictionary('dictionary2');">Zwierzęta</span>
-            <span onclick="setDictionary('dictionary3');">Jedzenie</span>
-            <span onclick="setDictionary('dictionary3');">Kategoria</span>
-            <span>Kategoria</span>
-            <span>Kategoria</span>
-            <span>Kategoria</span>
+            <button onclick="setDictionary('dictionary1');">Kolory</button>
+            <button onclick="setDictionary('dictionary2');">Zwierzęta</button>
+            <button onclick="setDictionary('dictionary3');">Jedzenie</button>
+            <button onclick="setDictionary('dictionary4');">Kierunki</button>
+            <button onclick="setDictionary('dictionary5');">Podstawowe zwroty</button>
+            <button onclick="setDictionary('dictionary6');">Czas</button>
+            <button onclick="setDictionary('dictionary1');">Pogoda (nie aktywne)</button>
+            <button onclick="setDictionary('dictionary2');">Zwierzęta</button>
+            <button onclick="setDictionary('dictionary3');">Jedzenie</button>
         </div>
         <div id="game-searched-word">
             <p id="recommendation">Napisz tłumaczenie: </p>
             <p id="searched-word"></p>
             <input type="text" id="user-word" placeholder="">
+            <input type="submit" id="submit" value="check" onclick="check();">
             <p id="wynik"></p>
             <p id="character-map"><span class="myText">à</span><span class="myText">è</span><span class="myText">ì</span><span class="myText">ò</span><span class="myText">ù</span><span class="myText">’</span><span class="myText">?</span></p>
         </div>
@@ -39,43 +42,8 @@
     </div>
 </body>
 </html>
+<script src="JS/dictionary.js"></script>
 <script>
-var dictionary1 = {
-    "grande": "duży",
-    "stesso": "ten sam",
-    "bello": "piękny",
-    "nuovo": "nowy",
-    "certo": "pewny",
-    "vero": "prawdziwy",
-    "buono": "dobry",
-    "italiano": "włoski",
-    "vecchio": "stary",
-    "ora": "teraz",
-    "qui": "tutaj",
-    "là": "tam",
-    "sempre": "zawsze"
-    // Dodaj więcej słów do słownika
-};
-
-var dictionary2 = {
-    "grande": "duży2",
-    "stesso": "ten sam2",
-    "bello": "piękny2",
-    "nuovo": "nowy2",
-    "certo": "pewny2",
-    "vero": "prawdziwy2",
-    "buono": "dobry2",
-    "italiano": "włoski2",
-    "vecchio": "stary",
-    "ora": "teraz",
-    "qui": "tutaj",
-    "là": "tam",
-    "sempre": "zawsze"
-    // Dodaj więcej słów do słownika
-};
-
-// Możesz dodać więcej słowników
-
 // Funkcja do ustawiania ciasteczka
 function setCookie(name, value, expiryHours) {
     var date = new Date();
@@ -203,8 +171,12 @@ function displayWord() {
         document.getElementById("searched-word").innerText = word;
     } else {
         document.getElementById("wynik").innerText = "Twój wynik to: " + score + "/10";
+        document.getElementById("recommendation").innerText = "Podsumowanie";
         document.getElementById("user-word").style.display = "none"; // Dodane
-
+        document.getElementById("submit").style.display = "none";
+        document.getElementById("searched-word").style.display = "none";
+        document.getElementById("character-map").style.display = "none";
+        
         // Usuwanie poprzednich klas
         resultField.classList.remove("true");
         resultField.classList.remove("false");
@@ -247,6 +219,11 @@ window.onload = function() {
     selectWords();
     displayWord();
 };
+function check()
+{
+    checkTranslation();
+    document.getElementById("user-word").value = "";
+}
 // Dodanie nasłuchiwania na zdarzenie 'keydown' dla pola "user-word"
 document.getElementById("user-word").addEventListener('keydown', function(event) {
     if (event.key === "Enter") {

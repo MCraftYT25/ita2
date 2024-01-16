@@ -48,7 +48,7 @@ h1 {
 
 #game-searched-word {
     text-align: center;
-    width: 400px;
+    width: 350px;
     padding: 0.5em;
 }
 .true {
@@ -130,4 +130,18 @@ h1 {
     color: rgb(253,217,141);
     border-radius: 0.2em;
     font-family: 'apple-semi-bold';
+}
+#kategorie button {
+    font-family: 'apple-semi-bold';
+    padding: 0.5em;
+    color: rgb(253,217,141);
+    border-radius: 0.2em;
+    background-color: #333;
+}
+#submit {
+    font-family: 'apple-semi-bold';
+    padding: 0.5em;
+    color: rgb(253,217,141);
+    border-radius: 0.2em;
+    background-color: #333;
 }
