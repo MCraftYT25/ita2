@@ -79,6 +79,7 @@ h1 {
 }
 #wynik {
     padding: 0.5em;
+    margin-bottom: 1em;
 }
 
 #dictionary {
@@ -144,4 +145,13 @@ h1 {
     color: rgb(253,217,141);
     border-radius: 0.2em;
     background-color: #333;
+}
+
+#game-form {
+    display: inline-flex;
+    width: 100%;
+    overflow: hidden;
+}
+#game-form #user-word {
+    width: 90%;
 }

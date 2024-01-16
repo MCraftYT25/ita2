@@ -21,12 +21,15 @@
             <button onclick="setDictionary('dictionary1');">Pogoda (nie aktywne)</button>
             <button onclick="setDictionary('dictionary2');">Zwierzęta</button>
             <button onclick="setDictionary('dictionary3');">Jedzenie</button>
+            <input type="button" value="Odśwież" onClick="location.reload ();" />
         </div>
         <div id="game-searched-word">
             <p id="recommendation">Napisz tłumaczenie: </p>
             <p id="searched-word"></p>
-            <input type="text" id="user-word" placeholder="">
-            <input type="submit" id="submit" value="check" onclick="check();">
+            <div id="game-form">
+                <input type="text" id="user-word" placeholder="">
+                <input type="submit" id="submit" value="→" onclick="check();">
+            </div>
             <p id="wynik"></p>
             <p id="character-map"><span class="myText">à</span><span class="myText">è</span><span class="myText">ì</span><span class="myText">ò</span><span class="myText">ù</span><span class="myText">’</span><span class="myText">?</span></p>
         </div>
