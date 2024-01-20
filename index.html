@@ -12,6 +12,19 @@
     </header>
     <div id="page-content">
         <div id="kategorie">
+            <select id="select" onchange="setDictionarySelect();">
+                <option value="dictionary1">Default</option>
+                <option value="dictionary1">Kolory</option>
+                <option value="dictionary2">Zwierzęta</option>
+                <option value="dictionary3">Jedzenie</option>
+                <option value="dictionary4">Kierunki</option>
+                <option value="dictionary5">Podstawowe zwroty</option>
+                <option value="dictionary6">Czas</option>
+                <option value="dictionary2"></option>
+                <option value="dictionary2"></option>
+            </select>
+            <input id="refresh" type="button" value="Odśwież" onClick="location.reload ();" />
+            <!--
             <button onclick="setDictionary('dictionary1');">Kolory</button>
             <button onclick="setDictionary('dictionary2');">Zwierzęta</button>
             <button onclick="setDictionary('dictionary3');">Jedzenie</button>
@@ -21,7 +34,8 @@
             <button onclick="setDictionary('dictionary1');">Pogoda (nie aktywne)</button>
             <button onclick="setDictionary('dictionary2');">Zwierzęta</button>
             <button onclick="setDictionary('dictionary3');">Jedzenie</button>
-            <input type="button" value="Odśwież" onClick="location.reload ();" />
+            <input id="refresh" type="button" value="Odśwież" onClick="location.reload ();" />
+            -->
         </div>
         <div id="game-searched-word">
             <p id="recommendation">Napisz tłumaczenie: </p>
@@ -36,17 +50,26 @@
         <div id="dictionary">
             <h2>Słownik</h2>
             <input type="text" id="searchelement" placeholder="Search...">
+            <!--
             <div class="word-cont">
                 <p class="word">grande</p>
                 <p class="pause">—</p>
                 <p class="translate">duży</p>
             </div>
+            -->
         </div>
     </div>
 </body>
 </html>
 <script src="JS/dictionary.js"></script>
 <script>
+function setDictionarySelect()
+{
+    //setDictionary();
+    var select = document.getElementById("select").value;
+    //alert(select);
+    setDictionary(select);
+}
 // Funkcja do ustawiania ciasteczka
 function setCookie(name, value, expiryHours) {
     var date = new Date();
