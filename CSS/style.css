@@ -33,6 +33,7 @@ header {
     background-color: #333;
     color: rgb(253,217,141);
     font-family: 'apple-semi-bold';
+    max-width: 100%;
 }
 body {
     font-family: 'apple';
@@ -192,13 +193,16 @@ h1 {
 /*————————————————————————————————————————||————————————————————*/
 /*————————————————————————————————————————||————————————————————*/
 /*————————————————————————————————————————||————————————————————*/
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 200px) {
     #page-content {
         margin-left: 0;
         margin-right: 0;
+        max-width: 100%;
+        overflow: hidden;
     }
     #game-searched-word {
-        width: 90%;
+        width: 95%;
+        overflow: hidden;
     }
     #dictionary {
         padding: 1em;
