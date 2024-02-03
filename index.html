@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
-    <title>Document</title>
+    <title>VSKY.GAME</title>
 </head>
 <body>
     <header>
@@ -13,18 +13,26 @@
     <div id="page-content">
         <div id="kategorie">
             <select id="select" onchange="setDictionarySelect();">
-                <option value="dictionarydef">Default</option>
-                <option value="dictionarydef">50</option>
-                <option value="dictionary1">Kolory</option>
-                <option value="dictionary2">Zwierzęta</option>
-                <option value="dictionary3">Jedzenie</option>
-                <option value="dictionary4">Kierunki</option>
-                <option value="dictionary5">Podstawowe zwroty</option>
-                <option value="dictionary6">Czas</option>
-                <option value="dictionary8">Regularne</option>
-                <option value="dictionary9">Nieregularne</option>
+                <optgroup label="Italiano">
+                    <option value="dictionarydef">Default</option>
+                    <option value="dictionarydef">50</option>
+                    <option value="dictionary1">Kolory</option>
+                    <option value="dictionary2">Zwierzęta</option>
+                    <option value="dictionary3">Jedzenie</option>
+                    <option value="dictionary4">Kierunki</option>
+                    <option value="dictionary5">Podstawowe zwroty</option>
+                    <option value="dictionary6">Czas</option>
+                    <option value="dictionary8">Regularne</option>
+                    <option value="dictionary9">Nieregularne</option>
+                </optgroup>
+                <optgroup label="English">
+                    <option value="dictionary_eng1">Fish4Words</option>
+                </optgroup>
+                <optgroup label="Deutsch">
+
+                </optgroup>
             </select>
-            <input id="refresh" type="button" value="Odśwież" onClick="location.reload ();" />
+            <input id="refresh" type="button" value="Refresh" onClick="location.reload ();" />
             <!--
             <button onclick="setDictionary('dictionary1');">Kolory</button>
             <button onclick="setDictionary('dictionary2');">Zwierzęta</button>
@@ -39,7 +47,7 @@
             -->
         </div>
         <div id="game-searched-word">
-            <p id="recommendation">Napisz tłumaczenie: </p>
+            <p id="recommendation">Write the translation: </p>
             <p id="searched-word"></p>
             
             <div id="game-form">
@@ -51,7 +59,7 @@
             <p id="character-map"><span class="myText">à</span><span class="myText">è</span><span class="myText">ì</span><span class="myText">ò</span><span class="myText">ù</span><span class="myText">’</span><span class="myText">?</span></p>
         </div>
         <div id="dictionary">
-            <h2>Słownik</h2>
+            <h2>Dictionary</h2>
             <input type="text" id="searchelement" placeholder="Search...">
             <!--
             <div class="word-cont">
@@ -64,6 +72,7 @@
     </div>
 </body>
 </html>
+<script src="JS/dictionary-eng.js"></script>
 <script src="JS/dictionary.js"></script>
 <script>
 function setDictionarySelect()
@@ -199,8 +208,8 @@ function displayWord() {
         var word = dictionary[selectedWords[attempts]];
         document.getElementById("searched-word").innerText = word;
     } else {
-        document.getElementById("wynik").innerText = "Twój wynik to: " + score + "/10";
-        document.getElementById("recommendation").innerText = "Podsumowanie";
+        document.getElementById("wynik").innerText = "Your score is: " + score + "/10";
+        document.getElementById("recommendation").innerText = "Summary";
         document.getElementById("user-word").style.display = "none"; // Dodane
         document.getElementById("submit").style.display = "none";
         document.getElementById("searched-word").style.display = "none";
@@ -231,10 +240,10 @@ function checkTranslation() {
 
     if (Object.keys(dictionary).find(key => dictionary[key] === searchedWord).toLowerCase() === userWord.toLowerCase()) {
         score++;
-        resultField.innerText = "Poprawne tłumaczenie!";
+        resultField.innerText = "Correct translation!";
         resultField.classList.add("true");
     } else {
-        resultField.innerText = "Niepoprawne tłumaczenie. Poprawne tłumaczenie to: " + Object.keys(dictionary).find(key => dictionary[key] === searchedWord);
+        resultField.innerText = "Incorrect translation. The correct translation is: " + Object.keys(dictionary).find(key => dictionary[key] === searchedWord);
         resultField.classList.add("false");
     }
 
