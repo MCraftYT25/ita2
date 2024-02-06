@@ -39,7 +39,7 @@
 
                 </optgroup>
             </select>
-            <input id="refresh" type="button" value="Refresh" onClick="location.reload();" />
+            <input id="refresh" type="button" value="Refresh" onClick="location.reload();"/>
             <!--
             <button onclick="setDictionary('dictionary1');">Kolory</button>
             <button onclick="setDictionary('dictionary2');">Zwierzęta</button>
@@ -58,7 +58,7 @@
             <p id="searched-word"></p>
 
             <div id="game-form">
-                <input type="text" id="user-word" placeholder="">
+                <input type="text" id="user-word" placeholder="" autocomplete="off" inputmode="text">
                 <input type="submit" id="submit" value="→" onclick="check();">
             </div>
 
@@ -70,7 +70,7 @@
         <!--<button onclick="resetsearch();" id="reset-search">Reset</button>-->
         <div id="dictionary">
             <h2>Dictionary</h2>
-            <input type="text" id="searchelement" placeholder="Search...">
+            <input type="text" id="searchelement" placeholder="Search..." autocomplete="off" inputmode="text">
             <!--
             <div class="word-cont">
                 <p class="word">grande</p>
@@ -117,14 +117,10 @@
                 document.getElementById('searchelement').focus();
                 break;
             case 2:
-                setTimeout(function () {
-                    document.getElementById('searchelement').focus();
-                }, 0);
+                document.getElementById('searchelement').focus();
                 break;
             case 3:
-                setTimeout(function () {
-                    document.getElementById('user-word').focus();
-                }, 0);
+                document.getElementById('user-word').focus();
                 break;
         }
     }
