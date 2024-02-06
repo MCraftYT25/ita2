@@ -1,42 +1,78 @@
+:root {
+    /*--main-color: rgb(253,217,141);
+    --second-color: #333;
+    --bg-color: rgb(253,217,141);
+    --font-color: black;
+    --font-2nd-color: #f2a86f;
+    --interface-color: #333;
+    --interface-text-color: rgb(253,217,141);*/
+    /*--interface-color: #00010D;*/
+    /*--interface-color: #00060D;*/
+    --interface-color: #0A0B0D;
+    --interface-text-color: rgb(253,217,141);
+    --font-normal: 'Apple';
+    --font-bold: 'Apple-semi-bold';
+}
 * {
     margin: 0;
     padding: 0;
 }
+/*————————————————————————————————————————|Gotham|————————————————————*/
+@font-face {
+    font-family: 'Gotham-normal';
+    src: url('../files/fonts/sfui/SFUIText-Regular.otf');
+}
+@font-face {
+    font-family: 'Gotham-bold';
+    src: url('../files/fonts/gotham/Gotham-Bold.otf');
+}
+@font-face {
+    font-family: 'Gotham-semi-bold';
+    src: url('../files/fonts/sfui/SFUIText-Semibold.otf');
+}
+@font-face {
+    font-family: 'Gotham-heavy';
+    src: url('../files/fonts/sfui/SFUIText-Heavy.otf');
+}
+@font-face {
+    font-family: 'Gotham-light';
+    src: url('../files/fonts/sfui/SFUIText-Light.otf');
+}
 /*————————————————————————————————————————|Fonts|————————————————————*/
 @font-face {
     font-family: 'Ubuntu';
-    src: url('../files/fonts/Ubuntu-Regular.ttf');
+    src: url('../files/fonts/sfui/Ubuntu-Regular.ttf');
 }
 @font-face {
     font-family: 'Apple';
-    src: url('../files/fonts/SFUIText-Regular.otf');
+    src: url('../files/fonts/sfui/SFUIText-Regular.otf');
 }
 @font-face {
     font-family: 'Apple-bold';
-    src: url('../files/fonts/SFUIText-Bold.otf');
+    src: url('../files/fonts/sfui/SFUIText-Bold.otf');
 }
 @font-face {
     font-family: 'Apple-heavy';
-    src: url('../files/fonts/SFUIText-Heavy.otf');
+    src: url('../files/fonts/sfui/SFUIText-Heavy.otf');
 }
 @font-face {
     font-family: 'Apple-semi-bold';
-    src: url('../files/fonts/SFUIText-Semibold.otf');
+    src: url('../files/fonts/sfui/SFUIText-Semibold.otf');
 }
 @font-face {
     font-family: 'Apple-light';
-    src: url('../files/fonts/SFUIText-Light.otf');
+    src: url('../files/fonts/sfui/SFUIText-Light.otf');
 }
 /*————————————————————————————————————————|Header|————————————————————*/
 header {
+    background-color: var(--interface-color);
+    color: var(--interface-text-color);
+    font-family: var(--font-bold);
     text-align: center;
-    background-color: #333;
-    color: rgb(253,217,141);
-    font-family: 'apple-semi-bold';
     max-width: 100%;
 }
 body {
-    font-family: 'apple';
+    font-family: var(--font-normal);
 }
 ::selection {
     background-color: rgb(253,217,141);
@@ -46,7 +82,7 @@ h1 {
 }
 h1, h2 {
     font-weight: normal;
-    font-family: 'apple-semi-bold';
+    font-family: var(--font-bold);
 }
 /*————————————————————————————————————————||————————————————————*/
 /*
@@ -77,15 +113,15 @@ h1, h2 {
     outline: none;
 }
 #recommendation {
-    background-color: #333;
-    color: rgb(253,217,141);
+    background-color: var(--interface-color);
+    color: var(--interface-text-color);
+    font-family: var(--font-bold);
     padding: 0.5em;
     border-radius: 0.2em;
-    font-family: 'apple-semi-bold';
 }
 #searched-word {
     padding: 0.5em;
-    font-family: 'apple-semi-bold';
+    font-family: var(--font-bold);
 }
 #wynik {
     padding: 0.5em;
@@ -110,7 +146,7 @@ h1, h2 {
     margin-top: 0.2em;
 }
 .word {
-    font-family: 'apple';
+    font-family: var(--font-normal);
 }
 .translate {
     color: gray;
@@ -121,8 +157,8 @@ h1, h2 {
 }
 /*————————————————————————————————————————|myText|————————————————————*/
 .myText {
-    background-color: #333;
-    color: rgb(253,217,141);
+    background-color: var(--interface-color);
+    color: var(--interface-text-color);
     padding: 0.5em;
     margin-left: 0.2em;
     margin-right: 0.2em;
@@ -145,43 +181,44 @@ h1, h2 {
     /*width: 350px;*/
 }
 #kategorie span {
-    background-color: #333;
+    background-color: var(--interface-color);
+    color: var(--interface-text-color);
+    font-family: var(--font-bold);
     padding: 0.5em;
-    color: rgb(253,217,141);
     border-radius: 0.2em;
-    font-family: 'apple-semi-bold';
 }
 #kategorie button {
+    background-color: var(--interface-color);
+    color: var(--interface-text-color);
+    font-family: var(--font-bold);
     margin: 0.2em;
     border: none;
-    font-family: 'apple-semi-bold';
     padding: 0.5em;
-    color: rgb(253,217,141);
     border-radius: 0.2em;
-    background-color: #333;
+    
 }
 #submit {
-    font-family: 'apple-semi-bold';
+    background-color: var(--interface-color);
+    color: var(--interface-text-color);
+    font-family: var(--font-bold);
     padding: 0.5em;
-    color: rgb(253,217,141);
     border-radius: 0.2em;
-    background-color: #333;
     width: 2.5em;
 }
 /*————————————————————————————————————————|select|————————————————————*/
 #select {
-    font-family: 'apple-semi-bold';
-    background-color: #333;
-    color: rgb(253,217,141);
+    background-color: var(--interface-color);
+    color: var(--interface-text-color);
+    font-family: var(--font-bold);
     font-size: 1em;
     border-radius: 0.2em;
     padding: 0.5em;
     /*width: 70%;*/
 }
 #refresh {
-    font-family: 'apple-semi-bold';
-    background-color: #333;
-    color: rgb(253,217,141);
+    background-color: var(--interface-color);
+    color: var(--interface-text-color);
+    font-family: var(--font-bold);
     font-size: 1em;
     padding: 0.5em;
     border-radius: 0.2em;
@@ -220,6 +257,25 @@ h1, h2 {
     #submit {
         width: 4em;
     }
+    #mobile-widgets {
+        visibility: visible;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding-bottom: 0.5em;
+        padding-top: 0.5em;
+        border-top-left-radius: 1vw;
+        border-top-right-radius: 1vw;
+        background-color: var(--interface-color);
+        color: var(--interface-text-color);
+    }
+    #mobile-widgets a {
+        background-color: var(--interface-color);
+        color: var(--interface-text-color);
+        padding: 0.5em;
+        text-decoration: none;
+        font-family: 'Apple-bold';
+    }
 }
 @media screen and (min-width: 1200px) {
     #page-content {
@@ -237,5 +293,8 @@ h1, h2 {
     }
     #submit {
         width: 2.5em;
+    }
+    #mobile-widgets {
+        visibility: hidden;
     }
 }
