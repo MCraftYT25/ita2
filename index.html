@@ -39,19 +39,7 @@
 
                 </optgroup>
             </select>
-            <input id="refresh" type="button" value="Refresh" onClick="location.reload();"/>
-            <!--
-            <button onclick="setDictionary('dictionary1');">Kolory</button>
-            <button onclick="setDictionary('dictionary2');">Zwierzęta</button>
-            <button onclick="setDictionary('dictionary3');">Jedzenie</button>
-            <button onclick="setDictionary('dictionary4');">Kierunki</button>
-            <button onclick="setDictionary('dictionary5');">Podstawowe zwroty</button>
-            <button onclick="setDictionary('dictionary6');">Czas</button>
-            <button onclick="setDictionary('dictionary1');">Pogoda (nie aktywne)</button>
-            <button onclick="setDictionary('dictionary2');">Zwierzęta</button>
-            <button onclick="setDictionary('dictionary3');">Jedzenie</button>
-            <input id="refresh" type="button" value="Odśwież" onClick="location.reload ();" />
-            -->
+            <input id="refresh" type="button" value="Refresh" onClick="location.reload();" />
         </div>
         <div id="game-searched-word">
             <p id="recommendation">Write the translation: </p>
@@ -67,7 +55,6 @@
                     class="myText">ì</span><span class="myText">ò</span><span class="myText">ù</span><span
                     class="myText">’</span><span class="myText">?</span></p>
         </div>
-        <!--<button onclick="resetsearch();" id="reset-search">Reset</button>-->
         <div id="dictionary">
             <h2>Dictionary</h2>
             <input type="text" id="searchelement" placeholder="Search..." autocomplete="off" inputmode="text">
@@ -81,7 +68,6 @@
         </div>
     </div>
     <div id="mobile-widgets">
-        <!--<a id="gomenu" href="#menu">Menu</a>-->
         <a id="gomenu" onclick="move(1);">Reset</a>
         <a id="gomenu" onclick="move(2);">Dictionary</a>
         <a id="gomenu" onclick="move(3);">Game</a>
@@ -92,19 +78,11 @@
 <script src="JS/dictionary-eng.js"></script>
 <script src="JS/dictionary.js"></script>
 <script>
-    /*function move(value) {
-    switch(value) {
-        case 1:
-            console.log("Wykonano działanie dla wartości 1");
-            break;
-        case 2:
-            document.getElementById('searchelement').focus();
-            break;
-        case 3:
-            document.getElementById('user-word').focus();
-            break;
-    }
-}*/
+    var wrong_answers = {
+
+    };
+</script>
+<script>
     function move(value) {
         switch (value) {
             case 1:
@@ -123,17 +101,6 @@
                 document.getElementById('user-word').focus();
                 break;
         }
-    }
-</script>
-<script>
-    function resetsearch() {
-        document.getElementById('searchelement').value = '';
-        var elements = document.querySelectorAll('.word-cont');
-        for (var i = 0; i < elements.length; i++) {
-            elements[i].style.display = "";
-        }
-
-        document.getElementById('searchelement').focus();
     }
 </script>
 <script>
@@ -234,12 +201,8 @@
             "corpo": "ciało",
             "bambino": "dziecko",
             "problema": "problem"
-            // Dodaj więcej słów do słownika
         };
     }
-
-    // Przykładowy słownik
-
 
     // Zmienna do przechowywania wyniku
     var score = 0;
@@ -270,8 +233,86 @@
             document.getElementById("searched-word").innerText = word;
         } else {
             document.getElementById("wynik").innerText = "Your score is: " + score + "/10";
+            /*var container = document.getElementById('wynik');
+    for (var key in wrong_answers) {
+        var p = document.createElement('p');
+        p.textContent = key + ": " + wrong_answers[key];
+        container.appendChild(p);
+    }*/
+            /*var container = document.getElementById('wynik');
+            for (var key in wrong_answers) {
+                var p = document.createElement('p');
+                var keySpan = document.createElement('span');
+                var valueSpan = document.createElement('span');
+        
+                keySpan.textContent = key + ": ";
+                keySpan.style.color = "red"; // kolor dla klucza
+        
+                valueSpan.textContent = wrong_answers[key];
+                valueSpan.style.color = "green"; // kolor dla wartości
+        
+                p.appendChild(keySpan);
+                p.appendChild(valueSpan);
+                container.appendChild(p);
+            }*/
+            /*var wynik = document.getElementById('wynik');
+        var kolory = ['red', 'green', 'blue']; // Możesz dodać więcej kolorów do tej tablicy
+        
+        for (var pole in wrong_answers) {
+            if (wrong_answers.hasOwnProperty(pole)) {
+                var paragrafPole = document.createElement('p');
+                paragrafPole.textContent = 'Pole: ' + pole;
+                paragrafPole.style.color = kolory[0];
+        
+                var paragrafOdpowiedz1 = document.createElement('p');
+                paragrafOdpowiedz1.textContent = 'Odpowiedź 1: ' + wrong_answers[pole].answer1;
+                paragrafOdpowiedz1.style.color = kolory[1];
+        
+                var paragrafOdpowiedz2 = document.createElement('p');
+                paragrafOdpowiedz2.textContent = 'Odpowiedź 2: ' + wrong_answers[pole].answer2;
+                paragrafOdpowiedz2.style.color = kolory[2];
+        
+                wynik.appendChild(paragrafPole);
+                wynik.appendChild(paragrafOdpowiedz1);
+                wynik.appendChild(paragrafOdpowiedz2);
+            }
+        }*/
+            /*var wynik = document.getElementById('wynik');
+            
+            for (var pole in wrong_answers) {
+                if (wrong_answers.hasOwnProperty(pole)) {
+                    var paragrafPole = document.createElement('p');
+                    paragrafPole.textContent = pole;
+                    paragrafPole.style.color = 'red';
+            
+                    var paragrafAnswer1 = document.createElement('p');
+                    paragrafAnswer1.textContent = wrong_answers[pole].answer1;
+                    paragrafAnswer1.style.color = 'green';
+            
+                    var paragrafAnswer2 = document.createElement('p');
+                    paragrafAnswer2.textContent = wrong_answers[pole].answer2;
+                    paragrafAnswer2.style.color = 'black';
+            
+                    wynik.appendChild(paragrafPole);
+                    wynik.appendChild(paragrafAnswer1);
+                    wynik.appendChild(paragrafAnswer2);
+                }
+            }*/
+            var wynik = document.getElementById('wynik');
+
+            for (var pole in wrong_answers) {
+                if (wrong_answers.hasOwnProperty(pole)) {
+                    var paragraf = document.createElement('p');
+                    paragraf.innerHTML = '<span style="color:red;">' + wrong_answers[pole].answer1 + '</span> ' +
+                        '<span style="color:green;">' + wrong_answers[pole].answer2 + '</span> ' +
+                        '<span style="color:black;">' + wrong_answers[pole].answer3 + '</span>';
+                    wynik.appendChild(paragraf);
+                }
+            }
+
+
             document.getElementById("recommendation").innerText = "Summary";
-            document.getElementById("user-word").style.display = "none"; // Dodane
+            document.getElementById("user-word").style.display = "none";
             document.getElementById("submit").style.display = "none";
             document.getElementById("searched-word").style.display = "none";
             document.getElementById("character-map").style.display = "none";
@@ -290,6 +331,8 @@
     }
 
     // Funkcja do sprawdzania poprawności tłumaczenia
+    var wrong_answers_index = 0;
+
     function checkTranslation() {
         var searchedWord = document.getElementById("searched-word").innerText;
         var userWord = document.getElementById("user-word").value;
@@ -305,7 +348,22 @@
             resultField.classList.add("true");
         } else {
             resultField.innerText = "Incorrect translation. The correct translation is: " + Object.keys(dictionary).find(key => dictionary[key] === searchedWord);
+            var correct_answer = Object.keys(dictionary).find(key => dictionary[key] === searchedWord);
+            var translate_answer = searchedWord;
+            if (userWord != "") {
+                var incorrect_answer = userWord;
+            } else {
+                var incorrect_answer = "---";
+            }
+
+            wrong_answers[wrong_answers_index] = {
+                answer1: incorrect_answer,
+                answer2: correct_answer,
+                answer3: translate_answer
+            };
+            wrong_answers_index++;
             resultField.classList.add("false");
+            console.log(wrong_answers);
         }
 
         attempts++;
@@ -426,7 +484,4 @@
             }
         });
     });
-</script>
-<script>
-
 </script>
