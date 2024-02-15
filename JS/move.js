@@ -10,7 +10,8 @@ function move(value) {
             document.getElementById('searchelement').focus();
             break;
         case 2:
-            document.getElementById('searchelement').focus();
+            //document.getElementById('searchelement').focus();
+            location.reload();
             break;
         case 3:
             document.getElementById('user-word').focus();

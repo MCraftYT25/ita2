@@ -325,6 +325,10 @@ h1, h2 {
         text-decoration: none;
         font-family: 'Apple-bold';
     }
+    #refresh {
+        visibility: hidden;
+        position: fixed;
+    }
 }
 @media screen and (min-width: 1200px) {
     #page-content {
@@ -345,5 +349,9 @@ h1, h2 {
     }
     #mobile-widgets {
         visibility: hidden;
+    }
+    #refresh {
+        visibility: visible;
+        position: relative;
     }
 }
