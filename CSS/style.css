@@ -218,6 +218,14 @@ h1, h2 {
     padding: 0.5em;
     /*width: 70%;*/
 }
+#select-count {
+    background-color: var(--interface-color);
+    color: var(--interface-text-color);
+    font-family: var(--font-bold);
+    font-size: 1em;
+    border-radius: 0.2em;
+    padding: 0.5em;
+}
 #refresh {
     background-color: var(--interface-color);
     color: var(--interface-text-color);

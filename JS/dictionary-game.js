@@ -1,12 +1,20 @@
 var wrong_answers = {};
 
+function setDictionarySelectCount() {
+    var select_count = document.getElementById("select-count").value;
+    setSelectCount(select_count);
+}
+
+function setSelectCount(select_count_value) {
+    setCookie('selectedCount', select_count_value, 2);
+    console.log("Ustawiono: " + select_count_value);
+}
+
 function setDictionarySelect() {
-    //setDictionary();
     var select = document.getElementById("select").value;
-    //alert(select);
     setDictionary(select);
 }
-// Funkcja do ustawiania ciasteczka
+
 function setCookie(name, value, expiryHours) {
     var date = new Date();
     date.setTime(date.getTime() + (expiryHours * 60 * 60 * 1000));
@@ -109,7 +117,7 @@ var attempts = 0;
 var selectedWords = [];
 
 // Funkcja do losowania 10 niepowtarzających się słów
-function selectWords() {
+/*function selectWords() {
     var keys = Object.keys(dictionary);
     while (selectedWords.length < 10) {
         var randomIndex = Math.floor(Math.random() * keys.length);
@@ -118,17 +126,53 @@ function selectWords() {
             selectedWords.push(word);
         }
     }
-}
+}*/
+function selectWords(user_object_count) {
+    var keys = Object.keys(dictionary);
 
+    /*if (keys.length < user_object_count) {
+        console.log("Obiekt 'dictionary' nie posiada wystarczającej liczby elementów.");
+        return;
+    }
+
+    while (selectedWords.length < user_object_count) {
+        var randomIndex = Math.floor(Math.random() * keys.length);
+        var word = keys[randomIndex];
+        if (!selectedWords.includes(word)) {
+            selectedWords.push(word);
+        }
+    }*/
+    if (keys.length >= user_object_count) {
+        while (selectedWords.length < user_object_count) {
+            var randomIndex = Math.floor(Math.random() * keys.length);
+            var word = keys[randomIndex];
+            if (!selectedWords.includes(word)) {
+                selectedWords.push(word);
+            }
+        }
+    } else {
+        user_object_count = keys.length;
+        //alert(keys.length);
+        //alert(user_object_count);
+        while (selectedWords.length < user_object_count) {
+            var randomIndex = Math.floor(Math.random() * keys.length);
+            var word = keys[randomIndex];
+            if (!selectedWords.includes(word)) {
+                selectedWords.push(word);
+            }
+        }
+    }
+    return user_object_count;
+}
 // Funkcja do wyświetlania słowa do przetłumaczenia
 function displayWord() {
     var resultField = document.getElementById("wynik");
-
-    if (attempts < 10) {
+    //alert(user_object_count);
+    if (attempts < user_object_count) {
         var word = dictionary[selectedWords[attempts]];
         document.getElementById("searched-word").innerText = word;
     } else {
-        document.getElementById("wynik").innerText = "Your score is: " + score + "/10";
+        document.getElementById("wynik").innerText = "Your score is: " + score + "/" + user_object_count + " (" + Math.round(score/user_object_count*100) + "%)";
 
         var wynik = document.getElementById('wynik');
 
@@ -203,9 +247,15 @@ function checkTranslation() {
     displayWord();
 }
 
+var user_object_count = getCookie('selectedCount');
+
+if(user_object_count == null)
+{
+    var user_object_count = 10;
+} 
 // Wywołanie funkcji displayWord po załadowaniu strony
 window.onload = function () {
-    selectWords();
+    user_object_count = selectWords(user_object_count);
     displayWord();
 };
 function check() {

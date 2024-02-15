@@ -16,7 +16,7 @@
         <div id="kategorie">
             <select id="select" onchange="setDictionarySelect();">
                 <optgroup label="Italiano">
-                    <option value="dictionarydef">Default</option>
+                    <option value="dictionarydef" hidden>Dictionary</option>
                     <option value="dictionarydef">50</option>
                     <option value="dictionary1">Kolory</option>
                     <option value="dictionary2">Zwierzęta</option>
@@ -28,16 +28,27 @@
                     <option value="dictionary9">Nieregularne</option>
                 </optgroup>
                 <optgroup label="English">
-                    <option value="dictionary_eng_useful">Useful</option>
-                    <option value="dictionary_eng4">Character Traits</option>
-                    <option value="dictionary_eng_matura">Matura 2024</option>
-                    <option value="dictionary_eng3">Synonyms</option>
-                    <option value="dictionary_eng1">Fish4Words</option>
                     <option value="dictionary_eng2">Phrasal Verbs</option>
+                    <option value="dictionary_eng4">Character Traits</option>
+                    <option value="dictionary_eng3">Synonyms</option>
+                    <option value="dictionary_eng_useful">Useful</option>
+                    <option value="dictionary_eng_matura">Matura 2024</option>
+                    <option value="dictionary_eng1">Fish4Words</option>
                 </optgroup>
                 <optgroup label="Deutsch">
 
                 </optgroup>
+            </select>
+            <select id="select-count" onchange="setDictionarySelectCount();">
+                <option value="10" hidden>Count</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
             </select>
             <input id="refresh" type="button" value="Refresh" onClick="location.reload();" />
         </div>

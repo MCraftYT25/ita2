@@ -106,7 +106,7 @@ var dictionary_eng_matura = {
     "damage": "szkoda / krzywda, uszkodzić",
     "accident": "wypadek",
     "not allowed": "nie dozwolony",
-    "worry, concern": "martwić się",
+    "worry": "martwić się",
     "complain": "skarżyć się, narzekać",
     "mention": "wspominać",
     "convince": "przekonać",
