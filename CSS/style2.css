@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --interface-color: black;
+    --interface-text-color: white;
+    --interface-font: 'Apple-semi-bold';
+    --content-font: 'Apple';
+}
+/*————————————————————————————————————————|Fonts|————————————————————*/
+@font-face {
+    font-family: 'Apple';
+    src: url('../files/fonts/sfui/SFUIText-Regular.otf');
+}
+@font-face {
+    font-family: 'Apple-light';
+    src: url('../files/fonts/sfui/SFUIText-Light.otf');
+}
+@font-face {
+    font-family: 'Apple-semi-bold';
+    src: url('../files/fonts/sfui/SFUIText-Semibold.otf');
+}
+@font-face {
+    font-family: 'Apple-bold';
+    src: url('../files/fonts/sfui/SFUIText-Bold.otf');
+}
+@font-face {
+    font-family: 'Apple-heavy';
+    src: url('../files/fonts/sfui/SFUIText-Heavy.otf');
+}
+/*————————————————————————————————————————|Global|————————————————————*/
+body {
+    font-weight: normal;
+    font-family: var(--content-font);
+}
+h1, h2, h3, h4, h5, h6, input, select {
+    font-weight: normal;
+    font-family: var(--interface-font);
+}
+input, select {
+    padding: 0.5em;
+    outline: none;
+    border: none;
+    background-color: var(--interface-color);
+    color: var(--interface-text-color);
+    font-size: 1em;
+}
+/*————————————————————————————————————————|Header|————————————————————*/
+header {
+    background-color: var(--interface-color);
+    color: var(--interface-text-color);
+    text-align: center;
+    padding: 0.5em;
+}
+/*————————————————————————————————————————|Page|————————————————————*/
+#page-content {
+    padding-top: 0.5em;
+    background-color: grey;
+}
+/*————————————————————————————————————————|Game|————————————————————*/
+#game-searched-word {
+    margin-top: 0.5em;
+    text-align: center;
+    width: 100%;
+    background-color: white;
+    max-width: 450px;
+}
+#recommendation {
+    background-color: var(--interface-color);
+    color: var(--interface-text-color);
+    padding: 0.5em;
+    font-family: var(--interface-font);
+}
+#searched-word {
+    padding: 0.5em;
+    font-family: var(--interface-font);
+}
+#game-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+#user-word {
+    padding: 0.5em;
+    color: black;
+    background-color: white;
+    font-size: 1.5em;
+    font-family: var(--content-font);
+    width: 100%;
+    border-bottom: solid 1px black;
+}
+/*————————————————————————————————————————|Symbols|————————————————————*/
+#character-map {
+    margin-top: 1em;
+}
+.symbols {
+    background-color: var(--interface-color);
+    color: var(--interface-text-color);
+    padding: 0.5em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    border-radius: 0.2em;
+    user-select: none;
+    display: inline-block;
+}
+/*————————————————————————————————————————|Dictionary|————————————————————*/
+#dictionary {
+    color: black;
+    background-color: white;
+}
+#searchelement {
+    color: black;
+    background-color: white;
+    font-family: var(--content-font);
+    border-bottom: solid black 1px;
+}
+.word-cont {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.2em;
+    margin-top: 0.2em;
+}
+.word {
+    font-family: var(--font-normal);
+}
+.translate {
+    color: gray;
+}
+.pause {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}

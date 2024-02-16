@@ -197,9 +197,9 @@ function displayWord() {
         resultField.classList.remove("false");
 
         // Dodawanie klasy w zależności od wyniku
-        if (score < 5) {
+        if (Math.round(score/user_object_count*100) < 50) {
             resultField.classList.add("false");
-        } else if (score > 5) {
+        } else if (Math.round(score/user_object_count*100) > 50) {
             resultField.classList.add("true");
         }
     }
