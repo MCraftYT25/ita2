@@ -71,6 +71,20 @@ header {
     background-color: white;
     max-width: 450px;
 }
+.true {
+    color: green;
+}
+.false {
+    color: red;
+}
+.wrong {
+    color: red;
+    text-decoration: line-through;
+}
+.correct {
+    color: green;
+    font-family: var(--interface-font);
+}
 #recommendation {
     background-color: var(--interface-color);
     color: var(--interface-text-color);
@@ -100,9 +114,15 @@ header {
     border-top-right-radius: 0.2em;
     border-bottom-right-radius: 0.2em;
 }
+#wynik {
+    padding: 0.5em;
+}
+#wynik p {
+    text-align: left;
+}
 /*————————————————————————————————————————|Symbols|————————————————————*/
 #character-map {
-    margin-top: 1em;
+    margin-top: 0.3em;
 }
 .symbols {
     background-color: var(--interface-color);
