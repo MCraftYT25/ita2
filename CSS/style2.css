@@ -3,8 +3,8 @@
     padding: 0;
 }
 :root {
-    --interface-color: black;
-    --interface-text-color: white;
+    --interface-color: #0A0B0D;
+    --interface-text-color: rgb(253,217,141);
     --interface-font: 'Apple-semi-bold';
     --content-font: 'Apple';
 }
@@ -56,9 +56,12 @@ header {
 /*————————————————————————————————————————|Page|————————————————————*/
 #page-content {
     padding-top: 0.5em;
-    background-color: grey;
     padding-left: 0.5em;
     padding-right: 0.5em;
+}
+/*————————————————————————————————————————|Select|————————————————————*/
+#select, #select-count {
+    border-radius: 0.2em;
 }
 /*————————————————————————————————————————|Game|————————————————————*/
 #game-searched-word {
@@ -73,6 +76,7 @@ header {
     color: var(--interface-text-color);
     padding: 0.5em;
     font-family: var(--interface-font);
+    border-radius: 0.2em;
 }
 #searched-word {
     padding: 0.5em;
@@ -91,6 +95,10 @@ header {
     font-family: var(--content-font);
     width: 100%;
     border-bottom: solid 1px black;
+}
+#submit {
+    border-top-right-radius: 0.2em;
+    border-bottom-right-radius: 0.2em;
 }
 /*————————————————————————————————————————|Symbols|————————————————————*/
 #character-map {
@@ -112,6 +120,7 @@ header {
     background-color: white;
     padding-left: 0.5em;
     padding-right: 0.5em;
+    margin-top: 1em;
 }
 #searchelement {
     color: black;
@@ -163,6 +172,9 @@ header {
         visibility: hidden;
         position: fixed;
     }
+    #searchelement {
+        font-size: 1.5em;
+    }
 }
 @media screen and (min-width: 1200px) {
     #mobile-widgets {
@@ -171,5 +183,8 @@ header {
     #refresh {
         visibility: visible;
         position: relative;
+    }
+    #searchelement {
+        font-size: 1em;
     }
 }
