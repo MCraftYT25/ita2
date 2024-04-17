@@ -1,0 +1,21 @@
+var dictionary_de_farben = {
+    "rot": "red",
+    "grün": "green",
+    "blau": "blue",
+    "gelb": "yellow",
+    "schwarz": "black",
+    "weiß": "white",
+    "lila": "purple",
+    "orange": "orange",
+    "rosa": "pink",
+    "braun": "brown",
+    "grau": "grey",
+    "silber": "silver",
+    "gold": "gold",
+    "beige": "beige",
+    "türkis": "turquoise",
+    "indigo": "indigo",
+    "violett": "violet",
+    "cyan": "cyan",
+    "magenta": "magenta"
+}

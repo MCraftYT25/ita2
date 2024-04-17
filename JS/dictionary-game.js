@@ -12,6 +12,15 @@ function setSelectCount(select_count_value) {
 
 function setDictionarySelect() {
     var select = document.getElementById("select").value;
+    if (select.includes("dictionary_eng")) {
+        set_gui(1);
+    } else if (select.includes("dictionary_de"))
+    {
+        set_gui(2);
+    } else if (select.includes("dictionary_ita"))
+    {
+        set_gui(3);
+    }
     setDictionary(select);
 }
 
@@ -257,6 +266,7 @@ if(user_object_count == null)
 window.onload = function () {
     user_object_count = selectWords(user_object_count);
     displayWord();
+    change_gui();
 };
 function check() {
     checkTranslation();

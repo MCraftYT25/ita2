@@ -52,7 +52,7 @@ var dictionarydef = {
     "problema": "problem"
     // Dodaj więcej słów do słownika
 };
-var dictionary1 = {
+var dictionary_ita1 = {
     "arancione": "pomarańczowy",
     "argento": "srebrny",
     "bianco": "biały",
@@ -69,7 +69,7 @@ var dictionary1 = {
     "viola": "fioletowy"
 };
 
-var dictionary2 = {
+var dictionary_ita2 = {
     "anatra": "kaczka",
     "cane": "pies",
     //"canguro": "kangur",
@@ -97,7 +97,7 @@ var dictionary2 = {
 
 };
 
-var dictionary3 = {
+var dictionary_ita3 = {
     "aglio": "czosnek",
     "anguria": "arbuz",
     "arancia": "pomarańcza",
@@ -130,7 +130,7 @@ var dictionary3 = {
     //"zucca": "dynia"
 };
 
-var dictionary4 = {
+var dictionary_ita4 = {
     "accanto": "obok",
     "davanti": "przed",
     "destra": "prawo",
@@ -146,7 +146,7 @@ var dictionary4 = {
     "sinistra": "lewo"
 };
 
-var dictionary5 = {
+var dictionary_ita5 = {
     "arrivederci": "do widzenia",
     "buongiorno": "dzień dobry",
     "buonanotte": "dobranoc",
@@ -171,7 +171,7 @@ var dictionary5 = {
     //"forse": "może",
 };
 
-var dictionary6 = {
+var dictionary_ita6 = {
     "secondo": "sekunda",
     "minuto": "minuta",
     "ora": "godzina",
@@ -207,7 +207,7 @@ var dictionary6 = {
     "dicembre": "grudzień"
 };
 
-var dictionary7 = {
+var dictionary_ita7 = {
     //potrzebne jeszcze kilka innaczej błedy
     "sole": "słońce",
     "pioggia": "deszcz",
@@ -220,7 +220,7 @@ var dictionary7 = {
     "freddo": "zimno"
 };
 
-var dictionary8 = {
+var dictionary_ita8 = {
     "abitare": "mieszkać",
     "aiutare": "pomagać",
     "amare": "kochać",
@@ -306,7 +306,7 @@ var dictionary8 = {
     "vivere": "żyć"
 };
 
-var dictionary9 = {
+var dictionary_ita9 = {
     "andare": "iść, jechać",
     "avere": "mieć",
     "bere": "pić",
@@ -324,6 +324,79 @@ var dictionary9 = {
     "uscire": "wychodzić",
     "venire": "przyjść, przyjechać",
     "volere": "chcieć"
+};
+
+var dictionary_ita10 = {
+    "affettuoso": "uczuciowy; afektowany",
+    "aggressivo": "agresywny",
+    "allegro": "wesoły, radosny",
+    "ambizioso": "ambitny",
+    "ardito": "śmiały",
+    "beneducato": "dobrze wychowany",
+    "buono": "dobry",
+    "caotico": "chaotyczny",
+    "capace": "zdolny",
+    "carino": "miły, uroczy",
+    "cattivo": "zły",
+    "coraggioso": "odważny",
+    "cortese": "uprzejmy",
+    "chiacchierone": "gadatliwy",
+    "creativo": "twórczy",
+    "crudele": "bezlitosny",
+    "spietato": "okrutny",
+    "delicato": "delikatny, subtelny",
+    "disinteressato": "bezinteresowny",
+    "disonesto": "nieuczciwy",
+    "eminente": "wybitny",
+    "educato": "grzeczny; wykształcony",
+    "eroico": "bohaterski",
+    "faceto, divertente": "zabawny, dowcipny",
+    "fedele": "wierny",
+    "franco, sincero": "szczery",
+    "garbato": "grzeczny; uprzejmy",
+    "giocoso": "wesoły, zabawny",
+    "gioioso": "radosny",
+    "giudizioso": "rozważny, rozsądny",
+    "immorale": "niemoralny",
+    "impaziente": "niecierpliwy",
+    "impulsivo": "impulsywny",
+    "ingiusto": "niesprawiedliwy",
+    "insensibile, indifferente": "bezduszny",
+    "intelligente": "inteligentny",
+    "interessante": "interesujący",
+    "intransigente": "bezkompromisowy",
+    "invadente": "nachalny",
+    "irriflessivo": "bezmyślny",
+    "laborioso": "pracowity",
+    "maligno, cattivo": "złośliwy",
+    "molesto": "dokuczliwy, natrętny",
+    "naturale": "bezpośredni",
+    "narcisistico": "narcystyczny",
+    "negligente": "niedbały, niedokładny",
+    "onesto": "uczciwy",
+    "pigro": "leniwy",
+    "pietoso": "litościwy",
+    "responsabile": "odpowiedzialny",
+    "riflessivo": "rozumny, rozważny",
+    "sapiente": "mądry",
+    "sensibile": "czuły, wrażliwy",
+    "sfrontato": "bezczelny",
+    "sgarbato": "niemiły, nieuprzejmy",
+    "silenzioso": "małomówny",
+    "sincero": "szczery",
+    "spensierato": "beztroski",
+    "sconsiderato": "bezmyślny",
+    "spiritoso": "dowcipny",
+    "spudorato": "bezwstydny",
+    "stupido": "głupi",
+    "superbo": "dumny, wyniosły",
+    "taciturno": "małomówny",
+    "timido": "nieśmiały",
+    "timoroso, pauroso": "bojaźliwy, strachliwy",
+    "tranquillo": "spokojny",
+    "trasandato": "niechlujny",
+    "triste": "smutny",
+    "ubbidiente": "grzeczny, posłuszny"
 };
 
 var dictionary4555 = {
