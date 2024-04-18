@@ -1,5 +1,5 @@
 //Słów musi być przynajmniej 10 innaczej będą błędy
-var dictionarydef = {
+var dictionary_ita_def = {
     "grande": "duży",
     "stesso": "ten sam",
     "bello": "piękny",
